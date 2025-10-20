@@ -7,11 +7,12 @@ from fastapi import FastAPI
 from langserve import add_routes
 import uvicorn
 
+# loading dot env
 load_dotenv()
 
 # Initialize Gemini with LangChain wrapper
 llm = ChatGoogleGenerativeAI(model="gemini-2.5-pro")
-
+  
 parser = StrOutputParser()
 
 system_template = "Translate the following into {language}:"
